@@ -51,10 +51,21 @@ body {
     margin-top: 75px;
     z-index: 4;
     position: relative;
+    /* transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0ms; */
+    transition: 1s ease-in-out 0ms;
 }
 
-.penguin * {
+.penguin * {transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0ms;
     position: absolute;
+}
+
+.penguin:active {
+    transform: scale(1.5);
+    cursor: not-allowed;
 }
 
 .penguin-head {
@@ -168,8 +179,9 @@ body {
 
 .shirt div {
     font-weight: initial;
-    top: 22.5px;
+    top: 25px;
     left: 12px;
+    color: rgba(255, 0, 0, 0.566);
 }
 
 .penguin-body {
@@ -206,6 +218,11 @@ body {
     left: 5%;
     transform-origin: 0% 0%;
     transform: rotate(130deg) scaleX(-1);
+    /* animation-name: wave;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+    animation: wave 3s linear infinite;
 }
 
 .arm.right {
@@ -217,16 +234,15 @@ body {
 @keyframes wave {
     10% {
         transform: rotate(110deg) scaleX(-1);
-        
     }
     20% {
-        
+        transform: rotate(130deg) scaleX(-1);
     }
     30% {
-        
+        transform: rotate(110deg) scaleX(-1);
     }
     40% {
-        
+        transform: rotate(130deg) scaleX(-1);
     }
 }
 
@@ -251,9 +267,11 @@ body {
 
 .ground {
     width: 100vw;
-    height: 400px;
+    height: calc(100vh - 300px);
     background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255));
     z-index: 3;
     position: absolute;
     margin-top: -58px;
+
 }
+
